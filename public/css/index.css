@@ -1,5 +1,5 @@
 
-.lesson-four-task-one:hover {
+.lesson-four-task-one button:hover {
     color: red;
     background-color: yellow;
 }
@@ -14,7 +14,7 @@
 }
 
 
-#sidebar:link {
+.lesson-four-task-four .link:link {
     color: red;
 }
 
@@ -42,7 +42,7 @@ p:lang(uk) {
     color: blue;
 }
 
-.form-group .form-control{
+.lesson-four-task-ten input:enabled {
     color: red;
     background-color: yellow;
 }
@@ -65,16 +65,16 @@ p:lang(uk) {
 
 .lesson-four-task-fourteen input:valid {
 
-    color: green;
+    background-color: green;
 }
 
 
 .lesson-four-task-fourteen input:invalid {
 
-    color: red;
+     background-color: red;
 }
 
-.lesson-four-task-fifteen #email:optional, #message:optional {
+.lesson-four-task-fifteen textarea:optional {
     background-color: red;
 }
 
