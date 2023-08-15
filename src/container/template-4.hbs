@@ -1,0 +1,38 @@
+
+    <header class="header">
+            <div>
+                {{>logo}}
+            </div>
+
+            <nav class="header_nav">
+                <div class="header_nav_right">
+                    {{>nav list=header}}
+                </div>
+            </nav>
+    </header>
+
+        <section>
+            {{#with main}}
+                <div class="main">
+                    <img class="main_image" alt="photo" src="{{image}}">
+                    <div class="main_content">
+                        <h1 class="main_title">{{heading}}</h1>
+                        <p class="main_description">{{description}}</p>
+                        <a class="button btn_main"  href="{{href}}">{{button}}</a>
+                    </div>
+                </div>
+            {{/with}}
+        </section>
+    <footer class="footer">
+        <div>
+            {{>logo}}
+        <span class="footer_copyright">Copyright 2023-2024</span> 
+        </div>
+
+        {{#each footer}}
+            <div>
+            <span class="footer_title">{{title}}</span> 
+            {{>nav list=links isVertical=true}}
+            </div>
+        {{/each}}
+    </footer>
