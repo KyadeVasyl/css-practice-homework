@@ -23,6 +23,30 @@
                 </div>
             {{/with}}
         </section>
+
+        <section>
+            <div class="featured">
+                {{#featured}}
+                    <div class="featured_card">
+                        <div class="featured_photo" style="background-image: url({{photo}});"></div>
+                        <h2 class="featured_title">{{heading}}</h2>
+                        <p class="featured_info">{{info}}</p>
+                        <a href="{{linkUrl}}" class="link_featured">{{linkText}}</a>
+                    </div>
+                {{/featured}}
+            </div>
+        </section>
+
+        <section>
+            <div class="actions">
+                {{#each actions}}
+                    <div class="actions_items">
+                        <h3 class="actions_heading">{{heading}}</h3>
+                        <a href="{{url}}" class="actions_btn">{{text}}</a>
+                    </div>
+                {{/each}}
+            </div>
+        </section>
     <footer class="footer">
         <div>
             {{>logo}}
