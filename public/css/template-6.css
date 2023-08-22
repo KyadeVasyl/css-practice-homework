@@ -279,18 +279,27 @@ border-radius: var(--border-radius-s);
     font-weight: 400;
 }
 
+#upd_list {
+    display: flex;
+}
+
 .upd_list {
     display: flex;
+   
+}
+
+.upd_list_block {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 12px;
 }
 
 .upd_icon {         /* цей блок відповідає за іконку */
     background-color: var(--color-primary);
-    width: 32px;
-    height: 32px;           
+    min-width: 32px;
+    min-height: 32px;           
     align-self: flex-start;
+    margin-right: 8px;
     
 }
 

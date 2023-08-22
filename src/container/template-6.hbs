@@ -46,13 +46,17 @@
             <div class="updates">
                 {{#with updates}}
                     <h2 class="upd_title">{{title}}</h2>
-                    <div class="upd_list">
-                        {{#each list}}
-                            <span class="upd_icon"></span>
-                            <strong class="upd_nicks">{{nickname}}</strong>
-                            <p class="upd_description">{{description}}</p>
-                        {{/each}}
-                    </div>
+                    {{#each list}}
+                        <div id="upd_list">
+                            <div class="upd_list">
+                                <span class="upd_icon"></span>
+                                <div class="upd_list_block">
+                                    <strong class="upd_nicks">{{nickname}}</strong>
+                                    <p class="upd_description">{{description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
 
                     {{#with show_all}}
                         <a class="show_all"  href="{{url}}">{{text}}</a>
