@@ -26,22 +26,22 @@ body:hover  .modal {
    
  } */
 
-:root {
-    --space-m: 12px;
-    --space-xm: 16px;
-    --space-l: 24px;
-    --space-b: 32px;
-    --size-d: 16px;
-    --size-s: 14px;
-    --size-l: 20px;
-    --color-border: #dee2e6;
-    --color-primary:  rgb(52, 68, 238);
-    --color-title: #5a5a5a;
-    --border-radius: 12px;
-    --color-plain_text: #343a40;
-    --weight-text: 400;
-    --page-width: 960px;
+ @import '/css/var.css';
+
+ @font-face {
+    font-family: 'SegmentRegular';
+    src: url('/font/Segment-Regular.otf');
+ }
+
+ @layer normalize, main, component, style;
+
+ @layer style {
+    .card_button {
+       background-color: rgb(53, 73, 127);
+    }
 }
+
+
 
 
 
@@ -179,7 +179,8 @@ body:hover  .modal {
 }
 
 .blog {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-b);
     padding: 40px;
     border-bottom: 1px solid var(--color-border);
@@ -214,16 +215,33 @@ body:hover  .modal {
     font-weight: var(--weight-text);
 }
 
-.card_button {
-    color: #ffff; 
-    background-color: var(--color-primary);
+@layer component {
+    .card_button {
+        color: #ffff; 
+        background-color: var(--color-primary);
+    }
 }
+
+@layer main {
+    
+.button {
+    display: inline-block;
+    padding: var(--space-m) var(--space-xm);
+    font-size: var(--size-d);
+    text-decoration: none;
+    border-radius: 4px;
+    transition-duration: 1s ;
+    transition-property:  opacity, background-color;
+}
+
 
 .button:hover {
     opacity: 0.8;
     background-color: yellow;
 }
 
+
+}
 .form {
     display: flex;
     justify-content: space-between;
@@ -258,17 +276,6 @@ body:hover  .modal {
     background-color: #ffffff;
 }
 
-.button {
-    display: inline-block;
-    padding: var(--space-m) var(--space-xm);
-    font-size: var(--size-d);
-    text-decoration: none;
-    border-radius: 4px;
-    transition-duration: 1s ;
-    transition-property:  opacity, background-color;
-}
-
-
 
 .hero_slider_left {
     left: var(--space-l);
@@ -300,7 +307,7 @@ body:hover  .modal {
     position: relative;
 }
 
-.modal {
+/* .modal {
     position: fixed;
     top: 200px;
     left: 200px;
@@ -313,19 +320,87 @@ body:hover  .modal {
     line-height: 150%;
     z-index: 2;
    
-} 
+}  */
 
-.modal_photo {
+/* .modal_photo {
     width: 100px;
     height: 100px;
     float: left;
     margin-right: 12px;
     margin-top: 12px;
     object-position: top left;
-} 
+}  */
 
 
 :root {
     scroll-behavior: smooth;
 }
 
+@media all and (width <= 600px) {
+
+    .blog {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+
+}
+
+@media all and (600px < width <= 800px) {
+    
+    .blog {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+
+}
+
+.form {
+    gap: var(--space-l)
+}
+
+
+@media all and (width <= 560px) {
+
+    .form {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+
+    .form_info {
+        max-width: 300px;
+        width: 100%;
+        line-height: 150%;
+    }
+
+    .form_content {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+
+.hero_container {
+    container-type: inline-size;
+    min-height: max-content;
+    container-name: hero;
+}
+
+@container hero (width < 960px) {
+
+    .hero {
+        flex-direction: column;
+    }
+}
+
+
+.hero_title {
+    font-family: SegmentRegular;
+    color: red;
+}
+
+.ex {
+    display: inline-block;
+    margin-left: 1ex;
+    font-size: 16px;
+}
