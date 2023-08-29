@@ -6,13 +6,14 @@
 
             <nav class="header_nav">
                 <div class="header_nav_right">
-                    {{>nav list=header}}
+                    {{>navfirst list=header}}
                 </div>
             </nav>
     </header>
 
     <section>
         {{#with hero}}
+        <div class="hero_container">
             <div class="hero">
                 <div class="hero_content">
                     <h1 class="hero_title">{{title}}</h1>
@@ -24,6 +25,7 @@
                     <div class="hero_slider_right hero_icon">{{right}}</div>
                 </div>
             </div>
+        </div>
         {{/with}}
     </section>
         {{!-- <div class="modal">
@@ -49,7 +51,7 @@
             <div class="form">
                 <div class="form_content">
                     <h3 class="form_title">{{title}}</h3>
-                    <p class="form_info">{{info}}</p>
+                    <p class="form_info">{{info}}<span class="ex">x</span></p>
                 </div>
                 <div class="form_action">
                     <a class="form_button button"  href="{{href}}">{{button}}</a>
@@ -67,7 +69,7 @@
         {{#each footer}}
             <div>
             <span class="footer_title">{{title}}</span> 
-            {{>nav list=links isVertical=true}}
+            {{>navfirst list=links isVertical=true}}
             </div>
         {{/each}}
     </footer>
